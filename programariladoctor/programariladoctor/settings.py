@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9&i9@mry5w3my05ppq56b$zkb=x88m!h&8do&b9rqgls944=v$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'programari',   #am adaugat
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'programariladoctor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # Sau 'django.db.backends.mysql' în funcție de ce folosești
+        'NAME': 'numele_bazei_de_date',
+        'USER': 'root',
+        'PASSWORD': 'Parola123#',
+        'HOST': 'host-ul_bazei_de_date',
+        'PORT': 'portul',  # De obicei 5432 pentru PostgreSQL, 3306 pentru MySQL
     }
 }
 
